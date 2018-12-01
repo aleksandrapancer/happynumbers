@@ -20,7 +20,7 @@ public class RandomNumbers : MonoBehaviour
     private void Start()
     {
         //enum w zależności od poziomu gry
-        CreateCalculation(LevelEnum.easy);
+        CreateCalculation(LevelEnum.hard);
 
 
         go = GameObject.Find("Panel_stars");
@@ -31,7 +31,7 @@ public class RandomNumbers : MonoBehaviour
     {
         if (numberStar == correctStar)
         {
-            CreateCalculation(LevelEnum.easy);
+            CreateCalculation(LevelEnum.hard);
             correctSound.Play();
 
             rndStarColor.randStars(); 
