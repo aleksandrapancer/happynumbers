@@ -31,7 +31,7 @@ public class RandomNumbers : MonoBehaviour
     {
         if (numberStar == correctStar)
         {
-            CreateCalculation(LevelEnum.hard);
+            CreateCalculation(LevelEnum.easy);
             correctSound.Play();
 
             rndStarColor.randStars(); 

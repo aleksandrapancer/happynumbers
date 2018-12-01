@@ -249,7 +249,7 @@ GameObject:
   - component: {fileID: 35435264}
   - component: {fileID: 35435263}
   m_Layer: 0
-  m_Name: back (1)
+  m_Name: next
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2522,7 +2522,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -89, y: -91}
+  m_AnchoredPosition: {x: -89, y: -25.2}
   m_SizeDelta: {x: 338.86, y: 312.95}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &2020960841
@@ -2591,7 +2591,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 2058049641}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e835c5510c53d134791f7184f8bca978, type: 3}
+  m_Script: {fileID: 11500000, guid: 1fdf2c4f8ab07854695297520572c410, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!61 &2058049643
