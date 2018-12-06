@@ -5,7 +5,7 @@ using UnityEngine;
 public class GenerateValues : MonoBehaviour
 {
     public List<Sprite> spriteList = new List<Sprite>();
-    int[] numbers = new int[] { 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30,31,32,33 };
+    int[] numbers = new int[] { 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30,31,32,33,34 };
     List<int> list = new List<int>();
     List<int> listButton = new List<int>();
     List<int> listNumber = new List<int>();
@@ -17,24 +17,25 @@ public class GenerateValues : MonoBehaviour
 
     public void Startt()
     {
-        for (int i = 1; i < 33; i++)
+        for (int i = 1; i < 35; i++)
         {
          
-              string name = "img" + i;
+            //  string name = "img" + i;
            
             string spriteName = "sprite" + i;
-            dictionary.Add(i, name);
+        //    dictionary.Add(i, name);
            
             spriteDictionary.Add(spriteName, spriteList[i-1]);
+            Debug.Log("GenerateValues: " + spriteList[i-1].name+" "+ (i-1));
         }
 
      
 
         list.AddRange(numbers);
 
-        for (int i = 0; i < 33; i++)
+        for (int i = 0; i < list.Count; i++)
         {
-            Debug.Log(i);
+        //    Debug.Log(i);
             listNumber.Add(list[i]);
         }
     }
@@ -59,7 +60,7 @@ public class GenerateValues : MonoBehaviour
     {
         listObject.Clear();
         var randomObject = Random.Range(10, spriteList.Count);
-       // Debug.Log(randomObject);
+       // Debug.Log("GenerateValues: "+randomObject);
         for (int i = 0; i < objectCount; i++)
         {
             listObject.Add(list[randomObject]);
