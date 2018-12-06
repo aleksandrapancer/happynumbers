@@ -3,7 +3,7 @@ using UnityEngine;
 using UnityEngine.UI;
 using static Assets.Scripts.CalculationScript.Level;
 
-public class RandomNumbers : MonoBehaviour
+public class RandomNumbersHard : MonoBehaviour
 {
     private Random random;
 
@@ -24,7 +24,7 @@ public class RandomNumbers : MonoBehaviour
         //enum w zależności od poziomu gry
         go = GameObject.Find("Panel_stars");
         rndStarColor = go.GetComponentInChildren<RandomStarColor>();
-        CreateCalculation(LevelEnum.easy);
+        CreateCalculation(LevelEnum.hard);
        
         star1BTN.onClick.AddListener(() => CheckCorrectlyResult(1));
         star2BTN.onClick.AddListener(() => CheckCorrectlyResult(2));
@@ -40,7 +40,7 @@ public class RandomNumbers : MonoBehaviour
         Debug.Log(numberStar+ " "+ correctStar);
         if (numberStar == correctStar)
         {
-            CreateCalculation(LevelEnum.easy);
+            CreateCalculation(LevelEnum.hard);
             correctSound.Play();
 
             rndStarColor.randStars(); 
@@ -62,10 +62,10 @@ public class RandomNumbers : MonoBehaviour
         var maxRange = maxRangeOfLevel[level];
         SignEnum sign;
 
-        if (level.Equals(LevelEnum.easy))
+        if (level.Equals(LevelEnum.hard))
         {
             sign = GetEnum(Random.Range(1, 3));
-            Debug.Log("EASY");
+           
         }
         else
             sign = GetEnum(Random.Range(1, 5));

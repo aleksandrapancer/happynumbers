@@ -35,7 +35,7 @@ public class RandomStarColor : MonoBehaviour {
     public void randStars() {
         foreach (Transform child in transform)
         {
-            rand = Random.Range(0, list.Count);
+            rand = Random.Range(1, list.Count);
             if (list.Contains(rand))
             {
                 string name = "sprite" + list[rand];
