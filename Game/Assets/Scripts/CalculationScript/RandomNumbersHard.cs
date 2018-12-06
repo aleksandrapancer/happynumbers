@@ -17,22 +17,90 @@ public class RandomNumbersHard : MonoBehaviour
     private int sum, firstNumber, secondNumber, correctStar, points = 0, value;
    
     GameObject go;
-    RandomStarColor rndStarColor;
+    public Vector3 positionsSTAR1start, positionsSTAR1stop, positionsSTAR2start, positionsSTAR2stop, positionsSTAR3start, positionsSTAR3stop, positionsSTAR4start, positionsSTAR4stop;
+
+
+    private void Update()
+    {
+        //Debug.Log(star1BTN.transform.position);
+        //STAR 1
+        star1BTN.transform.position = Vector3.MoveTowards(star1BTN.transform.position,
+            positionsSTAR1stop, 30 * Time.deltaTime);
+        //  Debug.Log(star1BTN.transform.position.y+ " "+ positionsSTAR1stop.y);
+        if (Mathf.Round(star1BTN.transform.position.y) == Mathf.Round(positionsSTAR1stop.y))
+        {
+
+            star1BTN.transform.position = positionsSTAR1start;
+
+        }
+
+        //STAR 2
+        star2BTN.transform.position = Vector3.MoveTowards(star2BTN.transform.position,
+            positionsSTAR2stop, 25 * Time.deltaTime);
+        //    Debug.Log(star2BTN.transform.position.y + " " + positionsSTAR2stop.y);
+        if (Mathf.Round(star2BTN.transform.position.y) == Mathf.Round(positionsSTAR2stop.y))
+        {
+
+            star2BTN.transform.position = positionsSTAR2start;
+
+
+        }
+        //STAR 3
+        star3BTN.transform.position = Vector3.MoveTowards(star3BTN.transform.position,
+            positionsSTAR3stop, 30* Time.deltaTime);
+        //    Debug.Log(star2BTN.transform.position.y + " " + positionsSTAR2stop.y);
+        if (Mathf.Round(star3BTN.transform.position.y) == Mathf.Round(positionsSTAR3stop.y))
+        {
+
+            star3BTN.transform.position = positionsSTAR3start;
+
+
+        }
+        //STAR 4
+        star4BTN.transform.position = Vector3.MoveTowards(star4BTN.transform.position,
+            positionsSTAR4stop, 20 * Time.deltaTime);
+        //    Debug.Log(star2BTN.transform.position.y + " " + positionsSTAR2stop.y);
+        if (Mathf.Round(star4BTN.transform.position.y) == Mathf.Round(positionsSTAR4stop.y))
+        {
+
+            star4BTN.transform.position = positionsSTAR4start;
+
+
+        }
+    }
 
     private void Start()
     {
         //enum w zależności od poziomu gry
-        go = GameObject.Find("Panel_stars");
-        rndStarColor = go.GetComponentInChildren<RandomStarColor>();
+        positionsSTAR1start= new Vector3(star1BTN.transform.position.x, star1BTN.transform.position.y,
+            star1BTN.transform.position.z);
+        positionsSTAR1stop= new Vector3(star1BTN.transform.position.x, star1BTN.transform.position.y -380,
+            star1BTN.transform.position.z);
+
+        positionsSTAR2start= new Vector3(star2BTN.transform.position.x, star2BTN.transform.position.y,
+            star2BTN.transform.position.z);
+        positionsSTAR2stop= new Vector3(star2BTN.transform.position.x, star2BTN.transform.position.y-370,
+            star2BTN.transform.position.z);
+
+        positionsSTAR3start=new Vector3(star3BTN.transform.position.x, star3BTN.transform.position.y,
+            star3BTN.transform.position.z);
+        positionsSTAR3stop = new Vector3(star3BTN.transform.position.x, star3BTN.transform.position.y-370,
+            star3BTN.transform.position.z);
+
+        positionsSTAR4start= new Vector3(star4BTN.transform.position.x, star4BTN.transform.position.y,
+            star4BTN.transform.position.z);
+       positionsSTAR4stop= new Vector3(star4BTN.transform.position.x, star4BTN.transform.position.y-380,
+            star4BTN.transform.position.z); 
+
         CreateCalculation(LevelEnum.hard);
-       
+        
+   
         star1BTN.onClick.AddListener(() => CheckCorrectlyResult(1));
         star2BTN.onClick.AddListener(() => CheckCorrectlyResult(2));
         star3BTN.onClick.AddListener(() => CheckCorrectlyResult(3));
         star4BTN.onClick.AddListener(() => CheckCorrectlyResult(4));
+        
 
-        go = GameObject.Find("Panel_stars");
-        rndStarColor = go.GetComponentInChildren<RandomStarColor>();
     }
 
     public void CheckCorrectlyResult(int numberStar)
@@ -43,7 +111,7 @@ public class RandomNumbersHard : MonoBehaviour
             CreateCalculation(LevelEnum.hard);
             correctSound.Play();
 
-            rndStarColor.randStars(); 
+        
         }
         else
         {

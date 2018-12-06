@@ -27,9 +27,12 @@ EditorBuildSettings:
     path: Assets/Scenes/NumberGame.unity
     guid: f318934206149c64c9a75262f3fda1f8
   - enabled: 1
+    path: Assets/Scenes/SetTheTime.unity
+    guid: 1621af47273c7e742a99399f3ca551fe
+  - enabled: 1
     path: Assets/Scenes/ClockLearning.unity
     guid: 510d962250cdc6249908c4a6a707088f
   - enabled: 1
-    path: Assets/Scenes/SetTheTime.unity
-    guid: 1621af47273c7e742a99399f3ca551fe
+    path: Assets/Scenes/Calculation2.unity
+    guid: 40b9ecf70806dff4b9b4dc43fed5ed32
   m_configObjects: {}

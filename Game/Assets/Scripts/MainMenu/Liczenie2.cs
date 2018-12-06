@@ -6,6 +6,6 @@ public class Liczenie2 : MonoBehaviour
 {
   void OnMouseDown()
     {
-        SceneManager.LoadScene("Calculation");
+        SceneManager.LoadScene("Calculation2");
     }
 }
