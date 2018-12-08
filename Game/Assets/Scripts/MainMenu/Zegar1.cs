@@ -1,12 +1,10 @@
-﻿using UnityEngine;
-using System.Collections;
-using UnityEngine.SceneManagement;
+﻿using Assets.Scripts.MainMenu;
+using UnityEngine;
 
 public class Zegar1 : MonoBehaviour
 {
-  void OnMouseDown()
+    private void OnMouseDown()
     {
-        //wczytanie sceny
-        SceneManager.LoadScene("BuildClock");
+        GameManager.Instance?.OnBuildClockButtonClick();
     }
 }

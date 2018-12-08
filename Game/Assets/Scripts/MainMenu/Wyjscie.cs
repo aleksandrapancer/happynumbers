@@ -1,12 +1,10 @@
-﻿using System.Collections;
-using System.Collections.Generic;
+﻿using Assets.Scripts.MainMenu;
 using UnityEngine;
 
-public class Wyjscie : MonoBehaviour {
-
-    void OnMouseDown()
+public class Wyjscie : MonoBehaviour
+{
+    private void OnMouseDown()
     {
-        //wyjście z gry
-        Application.Quit();
+        GameManager.Instance?.OnQuitButtonClick();
     }
 }

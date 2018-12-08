@@ -1,11 +1,10 @@
-﻿using UnityEngine;
-using System.Collections;
-using UnityEngine.SceneManagement;
+﻿using Assets.Scripts.MainMenu;
+using UnityEngine;
 
 public class Liczenie2 : MonoBehaviour
 {
-  void OnMouseDown()
+    private void OnMouseDown()
     {
-        SceneManager.LoadScene("Calculation2");
+        GameManager.Instance?.OnCalculation2ButtonClick();
     }
 }

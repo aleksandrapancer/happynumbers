@@ -7,13 +7,12 @@ namespace Assets.Scripts.Helpers
         public AudioClip CorrectAnswerSound;
         public AudioClip WrongAnswerSound;
 
-        public static SoundEffectsHelper Instance;
+        public static SoundEffectsHelper Instance { get; private set; }
 
         #region Unity Methods
 
         private void Awake()
         {
-            // Register the singleton
             if (Instance != null)
             {
                 Debug.LogError("Multiple instances of SoundEffectsHelper!");
@@ -33,10 +32,6 @@ namespace Assets.Scripts.Helpers
             PlaySound(WrongAnswerSound);
         }
 
-        /// <summary>
-        /// Play a given sound.
-        /// </summary>
-        /// <param name="originalClip"></param>
         private void PlaySound(AudioClip originalClip)
         {
             // As it is not 3D audio clip, position doesn't matter.

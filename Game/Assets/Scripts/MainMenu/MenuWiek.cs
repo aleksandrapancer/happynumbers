@@ -1,11 +1,10 @@
-﻿using UnityEngine;
-using System.Collections;
+﻿using Assets.Scripts.MainMenu;
+using UnityEngine;
 
-public class MenuWiek : MonoBehaviour 
+public class MenuWiek : MonoBehaviour
 {
-    void OnMouseDown()
+    private void OnMouseDown()
     {
-        //wczytanie sceny
-        Application.LoadLevel("MenuMlodsze");
+        GameManager.Instance?.OnYoungerButtonClick();
     }
 }

@@ -1,23 +1,22 @@
-﻿using System.Collections;
-using System.Collections.Generic;
+﻿using Assets.Scripts.MainMenu;
 using UnityEngine;
-using UnityEngine.SceneManagement;
 
-public class next : MonoBehaviour {
-
-    void OnMouseDown()
+public class next : MonoBehaviour
+{
+    private void OnMouseDown()
     {
-        //wczytanie sceny
-        SceneManager.LoadScene("SetTheTime");
+        GameManager.Instance?.OnSetTheTimeButtonClick();
     }
 
     // Use this for initialization
-    void Start () {
-		
-	}
-	
-	// Update is called once per frame
-	void Update () {
-		
-	}
+    private void Start()
+    {
+
+    }
+
+    // Update is called once per frame
+    private void Update()
+    {
+
+    }
 }

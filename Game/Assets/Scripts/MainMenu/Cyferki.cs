@@ -1,12 +1,10 @@
-﻿using UnityEngine;
-using System.Collections;
-using UnityEngine.SceneManagement;
+﻿using Assets.Scripts.MainMenu;
+using UnityEngine;
 
 public class Cyferki : MonoBehaviour
 {
-    void OnMouseDown()
-      {
-        //wczytanie sceny
-        SceneManager.LoadScene("LearnNumbers");
+    private void OnMouseDown()
+    {
+        GameManager.Instance?.OnNumbersLearningButtonClick();
     }
 }
