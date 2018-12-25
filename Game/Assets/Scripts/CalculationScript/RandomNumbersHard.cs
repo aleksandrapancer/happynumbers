@@ -17,7 +17,7 @@ public class RandomNumbersHard : MonoBehaviour
     private int sum, firstNumber, secondNumber, correctStar, points = 0, value;
    
     GameObject go;
-    public Vector3 positionsSTAR1start, positionsSTAR1stop, positionsSTAR2start, positionsSTAR2stop, positionsSTAR3start, positionsSTAR3stop, positionsSTAR4start, positionsSTAR4stop;
+     Vector3 positionsSTAR1start, positionsSTAR1stop, positionsSTAR2start, positionsSTAR2stop, positionsSTAR3start, positionsSTAR3stop, positionsSTAR4start, positionsSTAR4stop;
 
 
     private void Update()
@@ -25,7 +25,7 @@ public class RandomNumbersHard : MonoBehaviour
         //Debug.Log(star1BTN.transform.position);
         //STAR 1
         star1BTN.transform.position = Vector3.MoveTowards(star1BTN.transform.position,
-            positionsSTAR1stop, 30 * Time.deltaTime);
+            positionsSTAR1stop, 60 * Time.deltaTime);
         //  Debug.Log(star1BTN.transform.position.y+ " "+ positionsSTAR1stop.y);
         if (Mathf.Round(star1BTN.transform.position.y) == Mathf.Round(positionsSTAR1stop.y))
         {
@@ -36,7 +36,7 @@ public class RandomNumbersHard : MonoBehaviour
 
         //STAR 2
         star2BTN.transform.position = Vector3.MoveTowards(star2BTN.transform.position,
-            positionsSTAR2stop, 25 * Time.deltaTime);
+            positionsSTAR2stop, 55 * Time.deltaTime);
         //    Debug.Log(star2BTN.transform.position.y + " " + positionsSTAR2stop.y);
         if (Mathf.Round(star2BTN.transform.position.y) == Mathf.Round(positionsSTAR2stop.y))
         {
@@ -47,7 +47,7 @@ public class RandomNumbersHard : MonoBehaviour
         }
         //STAR 3
         star3BTN.transform.position = Vector3.MoveTowards(star3BTN.transform.position,
-            positionsSTAR3stop, 30* Time.deltaTime);
+            positionsSTAR3stop, 66* Time.deltaTime);
         //    Debug.Log(star2BTN.transform.position.y + " " + positionsSTAR2stop.y);
         if (Mathf.Round(star3BTN.transform.position.y) == Mathf.Round(positionsSTAR3stop.y))
         {
@@ -58,7 +58,7 @@ public class RandomNumbersHard : MonoBehaviour
         }
         //STAR 4
         star4BTN.transform.position = Vector3.MoveTowards(star4BTN.transform.position,
-            positionsSTAR4stop, 20 * Time.deltaTime);
+            positionsSTAR4stop, 52 * Time.deltaTime);
         //    Debug.Log(star2BTN.transform.position.y + " " + positionsSTAR2stop.y);
         if (Mathf.Round(star4BTN.transform.position.y) == Mathf.Round(positionsSTAR4stop.y))
         {
@@ -71,25 +71,27 @@ public class RandomNumbersHard : MonoBehaviour
 
     private void Start()
     {
+	    int width = (int)(Screen.width*0.8);
+	    Debug.Log(width);
         //enum w zależności od poziomu gry
         positionsSTAR1start= new Vector3(star1BTN.transform.position.x, star1BTN.transform.position.y,
             star1BTN.transform.position.z);
-        positionsSTAR1stop= new Vector3(star1BTN.transform.position.x, star1BTN.transform.position.y -380,
+        positionsSTAR1stop= new Vector3(star1BTN.transform.position.x, star1BTN.transform.position.y -width,
             star1BTN.transform.position.z);
 
         positionsSTAR2start= new Vector3(star2BTN.transform.position.x, star2BTN.transform.position.y,
             star2BTN.transform.position.z);
-        positionsSTAR2stop= new Vector3(star2BTN.transform.position.x, star2BTN.transform.position.y-370,
+        positionsSTAR2stop= new Vector3(star2BTN.transform.position.x, star2BTN.transform.position.y-width,
             star2BTN.transform.position.z);
 
         positionsSTAR3start=new Vector3(star3BTN.transform.position.x, star3BTN.transform.position.y,
             star3BTN.transform.position.z);
-        positionsSTAR3stop = new Vector3(star3BTN.transform.position.x, star3BTN.transform.position.y-370,
+        positionsSTAR3stop = new Vector3(star3BTN.transform.position.x, star3BTN.transform.position.y-width,
             star3BTN.transform.position.z);
 
         positionsSTAR4start= new Vector3(star4BTN.transform.position.x, star4BTN.transform.position.y,
             star4BTN.transform.position.z);
-       positionsSTAR4stop= new Vector3(star4BTN.transform.position.x, star4BTN.transform.position.y-380,
+       positionsSTAR4stop= new Vector3(star4BTN.transform.position.x, star4BTN.transform.position.y-width,
             star4BTN.transform.position.z); 
 
         CreateCalculation(LevelEnum.hard);

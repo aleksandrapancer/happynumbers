@@ -47,7 +47,7 @@ namespace Assets.Scripts.MainMenu
         public void OnNumbersLearningButtonClick()
         {
             BeforeSceneChangeActivity();
-            SceneManager.LoadScene(Scenes.NumberGameScene);
+            SceneManager.LoadScene(Scenes.LearnNumbersScene);
         }
 
         public void OnClockLearningButtonClick()
