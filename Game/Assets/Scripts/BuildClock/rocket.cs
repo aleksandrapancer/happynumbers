@@ -23,9 +23,14 @@ public class rocket : MonoBehaviour {
         string imgName = col.collider.gameObject.name;
         string placeName = gameObject.name; 
 
-        if (placeName == dictionary[dic[imgName]]) {
+        if (placeName == dictionary[dic[imgName]])
+        {
+	        //imgName = "";
+
+	        Debug.Log("CorrectPlace "+placeName);
             col.collider.GetComponent<items> ().collision = true;
             if (!col.collider.GetComponent<items>().dragging) {
+	            // Debug.Log("Not draggig");
                  col.collider.gameObject.transform.position = transform.position;
             }
         }

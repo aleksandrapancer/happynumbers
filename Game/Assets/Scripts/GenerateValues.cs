@@ -17,7 +17,7 @@ public class GenerateValues : MonoBehaviour
 
     public void Startt()
     {
-        for (int i = 1; i < 35; i++)
+        for (int i = 1; i < 34; i++)
         {
          
             //  string name = "img" + i;
@@ -26,7 +26,7 @@ public class GenerateValues : MonoBehaviour
         //    dictionary.Add(i, name);
            
             spriteDictionary.Add(spriteName, spriteList[i-1]);
-            Debug.Log("GenerateValues: " + spriteList[i-1].name+" "+ (i-1));
+            //Debug.Log("GenerateValues: " + spriteList[i-1].name+" "+ (i-1));
         }
 
      

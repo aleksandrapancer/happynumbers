@@ -7,9 +7,19 @@ public class items : MonoBehaviour {
     public bool dragging = false;
     public bool collision = false;
     Vector3 position;
+     Vector3 startPosition;
 
 
-    public void beginDrag() {
+
+     public void onTouch()
+     {
+	     position = gameObject.transform.position;
+
+     }
+
+     public void beginDrag() {
+	    startPosition = new Vector3(gameObject.transform.position.x,gameObject.transform.position.y,gameObject.transform.position.z);
+	    Debug.Log(startPosition.x);
         position = gameObject.transform.position;
         dragging = true;
     }
@@ -22,13 +32,16 @@ public class items : MonoBehaviour {
         if (!collision)
         {
             gameObject.transform.position = position;
+            Debug.Log(position);
         }
+        else
+        {
+	        dragging = false;
 
-        dragging = false;
-
-
-        AudioSource goodMove;
-        GetComponent<AudioSource>().Play();
+	        Debug.Log(":Good!");
+	        AudioSource goodMove;
+	        GetComponent<AudioSource>().Play();
+        }
     }
 
 }

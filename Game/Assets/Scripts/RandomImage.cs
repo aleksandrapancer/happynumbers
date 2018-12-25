@@ -15,6 +15,8 @@ public class RandomImage : MonoBehaviour
     private Dictionary<string, Sprite> spriteDictionary;
     float newTime;
     float timeInMinutes = 4f;
+    public AudioSource audioData;
+    public List<AudioClip> otherClip;
 
     void Start()
     {
@@ -41,7 +43,7 @@ public class RandomImage : MonoBehaviour
             PutImages(item);
         }
     }
-
+  
     public void PutImages(int itemNumber)
     {
         generateValues.AddImagesToObjectsList(itemNumber);
@@ -51,13 +53,17 @@ public class RandomImage : MonoBehaviour
         {
             if (index == itemNumber)
                 break;
-
+			
             string name = "sprite" + listObject[0];
+          
             addImg.ChangeImg(item.GetComponent<Image>(), spriteDictionary[name]);
-
+          
             index++;
         }
-
+        Debug.Log("IMAGE "+index);
+		audioData.clip = otherClip[index - 1];
+		audioData.Play(0);
+      // Debug.Log("started");
         string numberName = "sprite" + listNumber[itemNumber - 1];
         Transform number = transform.parent.Find("Panel_left").GetChild(0);
         addImg.ChangeImg(number.GetComponent<Image>(), spriteDictionary[numberName]);

@@ -6,5 +6,6 @@ public class MenuBack : MonoBehaviour
     private void OnMouseDown()
     {
         GameManager.Instance?.OnBackButtonClick();
+        Debug.Log("Back!");
     }
 }
