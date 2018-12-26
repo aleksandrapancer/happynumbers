@@ -25,7 +25,7 @@ public class RandomNumbersHard : MonoBehaviour
         //Debug.Log(star1BTN.transform.position);
         //STAR 1
         star1BTN.transform.position = Vector3.MoveTowards(star1BTN.transform.position,
-            positionsSTAR1stop, (speed1 * Time.deltaTime));
+            positionsSTAR1stop, 30 * Time.deltaTime);
         //  Debug.Log(star1BTN.transform.position.y+ " "+ positionsSTAR1stop.y);
         if (Mathf.Round(star1BTN.transform.position.y) == Mathf.Round(positionsSTAR1stop.y))
         {
@@ -36,7 +36,7 @@ public class RandomNumbersHard : MonoBehaviour
 
         //STAR 2
         star2BTN.transform.position = Vector3.MoveTowards(star2BTN.transform.position,
-            positionsSTAR2stop, (speed2 * Time.deltaTime));
+            positionsSTAR2stop, 25 * Time.deltaTime);
         //    Debug.Log(star2BTN.transform.position.y + " " + positionsSTAR2stop.y);
         if (Mathf.Round(star2BTN.transform.position.y) == Mathf.Round(positionsSTAR2stop.y))
         {
@@ -47,7 +47,7 @@ public class RandomNumbersHard : MonoBehaviour
         }
         //STAR 3
         star3BTN.transform.position = Vector3.MoveTowards(star3BTN.transform.position,
-            positionsSTAR3stop, (speed3 *Time.deltaTime));
+            positionsSTAR3stop, 30* Time.deltaTime);
         //    Debug.Log(star2BTN.transform.position.y + " " + positionsSTAR2stop.y);
         if (Mathf.Round(star3BTN.transform.position.y) == Mathf.Round(positionsSTAR3stop.y))
         {
@@ -58,7 +58,7 @@ public class RandomNumbersHard : MonoBehaviour
         }
         //STAR 4
         star4BTN.transform.position = Vector3.MoveTowards(star4BTN.transform.position,
-            positionsSTAR4stop, (speed4 * Time.deltaTime));
+            positionsSTAR4stop, 20 * Time.deltaTime);
         //    Debug.Log(star2BTN.transform.position.y + " " + positionsSTAR2stop.y);
         if (Mathf.Round(star4BTN.transform.position.y) == Mathf.Round(positionsSTAR4stop.y))
         {
@@ -71,12 +71,6 @@ public class RandomNumbersHard : MonoBehaviour
 
     private void Start()
     {
-	    int width = (int)(Screen.width*0.8);
-	    Debug.Log(width);
-	    speed1 = 70;
-	    speed2 = 75;
-	    speed3 = 73;
-	    speed4 = 79;
         //enum w zależności od poziomu gry
         positionsSTAR1start= new Vector3(star1BTN.transform.position.x, star1BTN.transform.position.y,
             star1BTN.transform.position.z);
@@ -281,3 +275,14 @@ public class RandomNumbersHard : MonoBehaviour
         }
     }
 }
+            positionsSTAR1stop, (speed1 * Time.deltaTime));
+            positionsSTAR2stop, (speed2 * Time.deltaTime));
+            positionsSTAR3stop, (speed3 *Time.deltaTime));
+            positionsSTAR4stop, (speed4 * Time.deltaTime));
+    {
+	    int width = (int)(Screen.width*0.8);
+	    Debug.Log(width);
+	    speed1 = 70;
+	    speed2 = 75;
+	    speed3 = 73;
+	    speed4 = 79;
