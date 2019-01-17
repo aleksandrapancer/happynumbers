@@ -16,7 +16,7 @@ namespace Assets
         //  secondsToDegrees = 360f / 60f;
 
         public Transform hours, minutes;// seconds;
-        public AudioSource tick, wind;
+        public AudioSource tick;
         private float timer = 1f;
         public float roundTimer = 60f;
         private bool touched;
@@ -38,7 +38,7 @@ namespace Assets
         private void Start()
         {
             //for debugging purposes
-            db = GameObject.Find("DEB");
+            //db = GameObject.Find("DEB");
             // debuger = db.GetComponentInChildren<Text>();
             //Radius around touchableoject
             touchAccuracy = 100;
