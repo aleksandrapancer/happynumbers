@@ -1,5 +1,6 @@
 ﻿using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class GenerateNumbers : MonoBehaviour
 {
@@ -17,9 +18,12 @@ public class GenerateNumbers : MonoBehaviour
     public Sprite sprite10;
     public Sprite sprite11;
 
+    public Sprite monsterImg;
+    int counter;
 
     int[] numbers = new int[] { 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12 };
     List<int> list = new List<int>();
+    AddImage addImg = new AddImage();
     List<int> listClock = new List<int>();
 
     Dictionary<string, Sprite> spriteDictionary = new Dictionary<string, Sprite>();
@@ -27,6 +31,7 @@ public class GenerateNumbers : MonoBehaviour
 
     void Start()
     {
+        counter = 0; 
 
         dictionary.Add(1, "img1");
         dictionary.Add(2, "img2");
@@ -86,4 +91,24 @@ public class GenerateNumbers : MonoBehaviour
         return dictionary;
     }
 
+
+    public void UpdateCounter()
+    {
+        counter++;
+        Debug.Log(counter);
+
+        if (counter == 9)
+        {
+            GameObject imageObject = GameObject.FindGameObjectWithTag("monster");
+            Debug.Log(imageObject);
+
+            if (imageObject != null)
+            {
+                Image img = imageObject.GetComponent<Image>();
+                addImg.ChangeImg(img, monsterImg);
+            }
+
+
+        }
+    }
 }

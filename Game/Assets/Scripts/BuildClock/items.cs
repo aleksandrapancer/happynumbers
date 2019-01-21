@@ -7,9 +7,7 @@ public class items : MonoBehaviour {
     public bool dragging = false;
     public bool collision = false;
     Vector3 position;
-     Vector3 startPosition;
-
-
+    Vector3 startPosition;
 
      public void onTouch()
      {
@@ -37,10 +35,12 @@ public class items : MonoBehaviour {
         else
         {
 	        dragging = false;
-
-	        Debug.Log(":Good!");
 	        AudioSource goodMove;
 	        GetComponent<AudioSource>().Play();
+
+            GameObject go = GameObject.Find("Canvas");
+            GenerateNumbers generateNumbers = (GenerateNumbers)go.GetComponentInChildren<GenerateNumbers>();
+            generateNumbers.UpdateCounter();
         }
     }
 

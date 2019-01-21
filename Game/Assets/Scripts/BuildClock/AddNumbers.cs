@@ -8,8 +8,12 @@ public class AddNumbers : MonoBehaviour {
     AddImage addImg = new AddImage();
     Dictionary<int, string> dic;
     int rand = 0;
+    int counter;
 
     void Start () {
+        counter = 0; 
+    
+
         GameObject go = GameObject.Find("Canvas");
         GenerateNumbers generateNumbers = (GenerateNumbers)go.GetComponentInChildren<GenerateNumbers>();
         List<int> list = generateNumbers.GetListClock();
@@ -28,4 +32,4 @@ public class AddNumbers : MonoBehaviour {
 
         }
     }
-}
+    }
